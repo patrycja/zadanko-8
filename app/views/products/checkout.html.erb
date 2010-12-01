@@ -1,0 +1,31 @@
+<div class="depot-form" >
+  <%= error_messages_for 'order' %>
+  <fieldset>
+  <legend>uzupelnij zamowienie</legend>
+    <% form_for :order, :url => { :action => :save_order } do |form| %>
+    <p>
+   <label for="order_name" >Imie:</label>
+   <%= form.text_field :name, :size => 40 %>
+   </p>
+    <p>
+   <label for="order_surname" >Nazwisko:</label>
+   <%= form.text_field :name, :size => 40 %>
+   </p>
+   <p>
+   <label for="order_address" >Adres:</label>
+   <%= form.text_area :address, :rows => 3, :cols => 40 %>
+   </p>
+   <p>
+   <label for="order_email" >E-Mail:</label>
+   <%= form.text_field :email, :size => 40 %>
+   </p>
+   <p>
+  <label for="order_pay_type" >Platnosc:</label>
+  <%= form.text_field :pay_type, :size => 40 %>
+  </p>
+  <%= form.submit "zloz zamowienie" %>
+  <% end %>
+  </fieldset>
+  </div>
+  
+  <%= link_to "nie skladam, wracam", products_path %>

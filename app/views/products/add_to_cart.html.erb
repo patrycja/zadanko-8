@@ -1,0 +1,11 @@
+<div class="cart-title" ><h1>Poka koszyk</h1></div>
+<table>
+<%= render(:partial => "cart_item" , :collection => @cart.items) %>
+<tr class="total-line" ><h2>
+<td colspan="2" >Suma:</td>
+<td class="total-cell" ><%= @cart.total_price %> zl</td></h2>
+</tr>
+</table>
+<%= button_to "Oproznij koszyk" , :action => :empty_cart %>
+<%= button_to "Zamow!" , :action => :checkout %>
+<%= link_to "Powrot", products_path %>

@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+<h3>Jestes zalogowany jako:
+<b><%= current_user.email %></b></h3>
+  <%= render 'form2' %>
+
+  <% if @products.blank? %>
+      <p><h1>nie ma zadnych produktow!!!11oneone!</h1></p>
+  <% else %>
+      <p><h1>poka towary</h1></p>
+  <ul id="products">
+    <% @products.each do |p| %>
+      <h1><%= link_to p.name, {:action => "show", :id => p.id} -%></h1>
+      <h2><%= p.description -%></h2>
+	  <%= p.price %> zl
+	  <%= button_to "do koszyka, hej!" , :action => :add_to_cart, :id => p.id %>
+    <% end %>
+	
+    </ul>
+	<%= will_paginate ({:previous_label => "&#8592; Poprzednia", :next_label => "Nastepna &#8594;"}) %>
+  <% end %>
+  
+  <p><%= link_to "Wyloguj sie", destroy_user_session_path %></p>
+  
+<% else %>
+  
+  <center><h1><br>Musisz byc zalogowany, by moc ogladac zawartosc tej strony.</h1><br><br>
+  <p><%= link_to "Zaloguj sie", new_user_session_path %></p><br>
+  <p><%= link_to "Zarejestruj sie", new_user_registration_path %></p></center>
+
+<% end %>

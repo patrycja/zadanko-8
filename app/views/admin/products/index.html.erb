@@ -1,0 +1,22 @@
+JESTEM ADMINEM I MOGE WSZYSTKO MUAHAH
+<% if @products.blank? %>
+      <p><h1>nie ma zadnych produktow!!!11oneone!</h1></p>
+  <% else %>
+      <p><h1>poka towar</h1></p>
+  <ul id="products">
+    <% @products.each do |p| %>
+      <h1><%= link_to p.name, {:action => "show", :id => p.id} -%></h1>
+      <h2><%= p.description -%></h2>
+	  <%= p.price %> zl
+	  <%= button_to "Edytuj produkt", {:action => "edit", :id => p.id}, {:method => :get} %>
+	  <%= button_to "Usun produkt", {:action => "destroy", :id => p.id}, {:confirm => "Na pewno?",
+    	  :method => :delete} %>
+    <% end %>
+	
+    </ul>
+	<%= will_paginate ({:previous_label => "&#8592; Poprzednia", :next_label => "Nastepna &#8594;"}) %>
+  <% end %>
+
+<%= button_to "Dodaj nowy produkt", {:action => 'new', :controller => 'products'}, {:method => :get} %>
+
+<%= link_to "Wroc", products_path %>

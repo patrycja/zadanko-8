@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mah lil shop</title>
+  <%= stylesheet_link_tag "style" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id='container'>
+  <%= yield %>
+  <%= notice %>
+</div><!--container-->
+
+</body>
+</html>

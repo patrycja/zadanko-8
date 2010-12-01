@@ -1,0 +1,45 @@
+body {
+  background: url(bg.jpg) fixed;
+  padding: 20px;
+  margin: 0px;
+
+}
+
+#container{
+	height:600px;
+	width:920px;
+	background: #F9FAD3;
+	border: 1px solid #80c8fe;
+	margin-top:25px;
+	margin-left: 125px;
+	padding: 5px 10px;
+}
+
+h1{
+	font-family: Verdana;
+	font-size: 20px;
+	color: #9D8752;
+	margin: 5px 0px;
+}
+
+h2{
+	font-family: Verdana;
+	font-size: 15px;
+	color: #EB5736;
+	margin:3px 15px;
+}
+
+h3{
+    font-family: Verdana;
+	font-size :12px;
+	color: #EB5736;
+	margin: 3px 0px
+}
+
+
+#container p {
+	font-family: Verdana;
+	font-size: 12px;
+	color: #000000;
+	margin: 3px 10px;
+}
